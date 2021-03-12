@@ -14,10 +14,12 @@ public class HttpRequest {
         self.url = url
         self.headers = headers
         self.timeout = timeout
+        self.cachePolicy = cachePolicy
     }
 
     public init(url: String, cachePolicy: NSURLRequest.CachePolicy = .useProtocolCachePolicy) {
         self.url = url
+        self.cachePolicy = cachePolicy
     }
 }
 
@@ -36,9 +38,9 @@ public class HttpRequestWithBody<TBody>: HttpRequest {
 }
 
 public struct Callback<TResult> {
-    var loading: Bool
-    var result: TResult?
-    var error: RequestError?
+    public var loading: Bool
+    public var result: TResult?
+    public var error: RequestError?
 }
 
 public enum RequestError: Error, Equatable {
