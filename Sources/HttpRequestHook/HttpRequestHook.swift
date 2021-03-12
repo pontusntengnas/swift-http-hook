@@ -28,7 +28,7 @@ public struct HttpRequestHook {
     private let jsonDecoder: JSONDecoder
     private let logger: Logger?
 
-    init(session: HttpClient = URLSession.shared, logger: Logger? = nil) {
+    public init(session: HttpClient = URLSession.shared, logger: Logger? = nil) {
         self.session = session
         self.jsonEncoder = JSONEncoder()
         self.jsonDecoder = JSONDecoder()
